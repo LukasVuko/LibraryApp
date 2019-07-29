@@ -96,9 +96,6 @@ header {
 
 /* IMAGES -------- */
 
-.course-img {
-  width: 70px;
-}
 .teacher-img {
   width: 100%;
   border-radius: 0.3em;
@@ -208,11 +205,11 @@ header {
   .home a {
     border-color: #3b80d1;
   }
-  .media img,
+  /* .media img,
   .media > div,
   .teacher {
     float: left;
-  }
+  } */
   .media > div {
     width: 85.1%;
     margin-left: 1.5em;
@@ -257,7 +254,7 @@ header {
 
 /* Book Card */
 .book-card {
-  background-color: lightblue;
+  background-color: #edeff0;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -276,8 +273,37 @@ header {
   border-radius: 50%;
   display: inline-block;
 }
-
+.green {
+  background-color: green;
+}
 .tag {
   display: inline-block;
   text-align: center;
+}
+/* Course */
+
+.course {
+  background-color: #edeff0;
+  border-radius: 0.3em;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.course-img {
+  height: 100%;
+  border-radius: 0.3em;
+  margin: auto 0;
+}
+
+.course-info {
+}
+
+.grey {
+  background-color: #edeff0;
+}
+
+.submit-book {
+  display: flex;
+  flex-direction: column;
 }

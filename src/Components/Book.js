@@ -1,33 +1,34 @@
 import React from "react";
+import { Consumer } from "../Components/Context/index";
 
-const Book = props => {
+const Book = ({ index }) => {
   return (
-    <div className="book-card">
-      <img
-        src="https://prodimage.images-bn.com/pimages/9781499369748_p0_v2_s600x595.jpg"
-        alt="Cover"
-        className="cover"
-      />
-      <div className="book-info">
-        <h2>Pride and Prejudice</h2>
-        <p>Author: Jane Austen</p>
-        <p>
-          Since its immediate success in 1813, Pride and Prejudice has remained
-          one of the most popular novels in the English language. Jane Austen
-          called this brilliant work "her own darling child" and its vivacious
-          heroine, Elizabeth Bennet, "as delightful a creature as ever appeared
-          in print." The romantic clash between the opinionated Elizabeth and
-          her proud beau, Mr. Darcy, is a splendid performance of civilized
-          sparring. And Jane Austen's radiant wit sparkles as her characters
-          dance a delicate quadrille of flirtation and intrigue, making this
-          book the most superb comedy of manners of Regency England.
-        </p>
-        <hr />
-        <span className="dot" /> <span className="tag">In stock!</span>
-        <hr />
-        <span className="dot" /> <span className="tag">Paperback</span>
-      </div>
-    </div>
+    <Consumer>
+      {({ books }) => {
+        return (
+          <div className="book-card">
+            <img src={books[index].img_src} alt="Cover" className="cover" />
+            <div className="book-info">
+              <h2>{books[index].title}</h2>
+              <p>Author: {books[index].author}</p>
+              <p>{books[index].desc}</p>
+              <hr />
+              <span
+                className={books[index].isAvailable ? "dot green" : "dot"}
+              />{" "}
+              <span className="tag">
+                {books[index].isAvailable ? "In Stock!" : "Out of stock"}
+              </span>
+              <hr />
+              <span className="tag">
+                {books[index].isPaperback ? "Paperback" : "Hardcover"}
+              </span>
+              <hr />
+            </div>
+          </div>
+        );
+      }}
+    </Consumer>
   );
 };
 

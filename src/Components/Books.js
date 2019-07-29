@@ -7,10 +7,12 @@ class Books extends React.Component {
     return (
       <div className="main-content">
         <Consumer>
-          {({books}) => (
-            {books.data.map((book, index) => (
-              <Book key={book.id} index={index} />
-            ))}
+          {({ books }) => (
+            <React.Fragment>
+              {books.map((books, index) => (
+                <Book key={books.id.toString()} index={index} />
+              ))}
+            </React.Fragment>
           )}
         </Consumer>
       </div>
