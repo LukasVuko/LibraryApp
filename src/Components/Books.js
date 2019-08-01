@@ -1,6 +1,6 @@
 import React from "react";
-import Book from "../Components/Book";
-import { Consumer } from "../Components/Context/index";
+import Book from "../components/Book";
+import { Consumer } from "../components/context/index";
 
 class Books extends React.Component {
   render() {

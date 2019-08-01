@@ -307,3 +307,10 @@ header {
   display: flex;
   flex-direction: column;
 }
+
+#capitalize {
+  text-transform: capitalize;
+}
+#noCapitalize {
+  text-transform: none;
+}

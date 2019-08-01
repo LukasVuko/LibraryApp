@@ -1,30 +1,41 @@
 import React from "react";
-import { Consumer } from "../Components/Context/index";
+import { Consumer } from "../components/context/index";
 
 class Member extends React.Component {
   render() {
+    const { index } = this.props;
     return (
       <Consumer>
         {({ members }) => {
           return (
-            <li className="course media group">
+            <li id="capitalize" className="course media group">
               <img
                 className="course-img"
-                src={members[this.props.index].picture.large}
+                src={members[index].img}
                 alt="course"
               />
               <div className="course-info">
                 <h3>
-                  {members[this.props.index].name.first}{" "}
-                  {members[this.props.index].name.last}
+                  {members[index].name.first}
+                  {members[index].name.last}
                 </h3>
                 <p>
-                  {members[this.props.index].location.street}{" "}
-                  {members[this.props.index].location.city}{" "}
-                  {members[this.props.index].location.state}
+                  Address: {members[index].address}
+                  {"."}
                 </p>
-                <p>{members[this.props.index].email}</p>
-                <p>{members[this.props.index].phone}</p>
+                <p>
+                  City: {members[index].city}
+                  {", "}
+                  {members[index].province}
+                </p>
+                <p>{members[index].email}</p>
+                <p>Phone: {members[index].phone}</p>
+              </div>
+              <div>
+                <p style={{ display: "block" }}>
+                  Book assigned:{" "}
+                  {members[index].book ? members[index].book.title : "None"}
+                </p>
               </div>
             </li>
           );

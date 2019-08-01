@@ -1,10 +1,11 @@
 import React from "react";
-import { Consumer } from "../Components/Context/index";
+import { Consumer } from "../components/context/index";
+import MemberDropdown from "../components/MemberDropdown";
 
 const Book = ({ index }) => {
   return (
     <Consumer>
-      {({ books }) => {
+      {({ books, actions }) => {
         return (
           <div className="book-card">
             <img src={books[index].img_src} alt="Cover" className="cover" />
@@ -14,15 +15,24 @@ const Book = ({ index }) => {
               <p>{books[index].desc}</p>
               <hr />
               <span
-                className={books[index].isAvailable ? "dot green" : "dot"}
+                className={
+                  books[index].availability.isAvailable ? "dot green" : "dot"
+                }
               />{" "}
               <span className="tag">
-                {books[index].isAvailable ? "In Stock!" : "Out of stock"}
+                {books[index].availability.isAvailable
+                  ? "In Stock!"
+                  : books[index].availability.assignedMember.name.first}
               </span>
               <hr />
               <span className="tag">
-                {books[index].isPaperback ? "Paperback" : "Hardcover"}
+                {books[index].isPaperBack ? "Paperback" : "Hardcover"}
               </span>
+              <hr />
+              <MemberDropdown />
+              <button onClick={() => actions.checkoutBook(0, 0)}>
+                Checkout
+              </button>
               <hr />
             </div>
           </div>

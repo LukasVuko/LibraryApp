@@ -1,6 +1,6 @@
 import React from "react";
-import Member from "../Components/Member";
-import { Consumer } from "../Components/Context/index";
+import Member from "../components/Member";
+import { Consumer } from "../components/context/index";
 
 class Members extends React.Component {
   render() {
@@ -10,7 +10,7 @@ class Members extends React.Component {
           <Consumer>
             {({ members }) =>
               members.map((member, index) => (
-                <Member key={member.login.username} index={index} />
+                <Member key={member.id} index={index} />
               ))
             }
           </Consumer>

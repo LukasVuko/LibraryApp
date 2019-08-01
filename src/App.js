@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
 // App components
-import Header from "../src/Components/Header";
-import Books from "../src/Components/Books";
-import RegisterABook from "../src/Components/RegisterABook";
-import Members from "../src/Components/Members";
-import RegisterAMember from "../src/Components/RegisterAMember";
+import Header from "../src/components/Header";
+import Books from "../src/components/Books";
+import RegisterABook from "../src/components/RegisterABook";
+import Members from "../src/components/Members";
+import RegisterAMember from "../src/components/RegisterAMember";
 
 const App = () => (
   <BrowserRouter>
