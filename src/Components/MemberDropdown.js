@@ -4,20 +4,25 @@ import { Consumer } from "../components/context/index";
 export class MemberDropdown extends Component {
   render() {
     return (
-      <select id="capitalize">
-        <option>**Available**</option>
-        <Consumer>
-          {({ members }) => {
-            return members.map((member, index) => {
-              return (
-                <option key={index}>
-                  {member.name.first} {member.name.last}
-                </option>
-              );
-            });
-          }}
-        </Consumer>
-      </select>
+      <Consumer>
+        {({ members, actions }) => {
+          return (
+            <React.Fragment>
+              <select id="capitalize test">
+                <option>**Available**</option>
+                {members.map((member, index) => {
+                  return (
+                    <option key={index}>
+                      {member.name.first} {member.name.last}
+                    </option>
+                  );
+                })}
+              </select>
+              <button>Checkout</button>
+            </React.Fragment>
+          );
+        }}
+      </Consumer>
     );
   }
 }

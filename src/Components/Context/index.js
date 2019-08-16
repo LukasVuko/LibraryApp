@@ -52,7 +52,9 @@ export class Provider extends React.Component {
   }
 
   checkoutBook = (bookIndex, memberIndex) => {
-    const book = this.state.books[bookIndex];
+    const bookIndex2 = bookIndex;
+
+    const book = this.state.books[bookIndex2];
     const member = this.state.members[memberIndex];
     const { books, members } = this.state;
 

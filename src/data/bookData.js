@@ -7,7 +7,7 @@ export const bookData = [
       isAvailable: true,
       assignedMember: null
     },
-    isPaperback: true,
+    isPaperback: false,
     img_src:
       "https://prodimage.images-bn.com/pimages/9781499369748_p0_v2_s600x595.jpg",
     id: "book-1"
@@ -17,10 +17,10 @@ export const bookData = [
     author: "F. Scott Fitzgerald",
     desc: `THE GREAT GATSBY, F. Scott Fitzgerald's third book, stands as the supreme achievement of his career. This exemplary novel of the Jazz Age has been acclaimed by generations of readers. The story is of the fabulously wealthy Jay Gatsby and his new love for the beautiful Daisy Buchanan, of lavish parties on Long Island at a time when The New York Times noted "gin was the national drink and sex the national obsession," it is an exquisitely crafted tale of America in the 1920s.`,
     availability: {
-      isAvailable: false,
+      isAvailable: true,
       assignedMember: null
     },
-    isPaperBack: false,
+    isPaperBack: true,
     img_src: "https://images-na.ssl-images-amazon.com/images/I/41SBgTel38L.jpg",
     id: "book-2"
   },

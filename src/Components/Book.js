@@ -22,17 +22,16 @@ const Book = ({ index }) => {
               <span className="tag">
                 {books[index].availability.isAvailable
                   ? "In Stock!"
-                  : books[index].availability.assignedMember.name.first}
+                  : `Sorry! This book is currently assigned to: ${
+                      books[index].availability.assignedMember.name.first
+                    } ${books[index].availability.assignedMember.name.last}`}
               </span>
               <hr />
               <span className="tag">
                 {books[index].isPaperBack ? "Paperback" : "Hardcover"}
               </span>
               <hr />
-              <MemberDropdown />
-              <button onClick={() => actions.checkoutBook(0, 0)}>
-                Checkout
-              </button>
+              <MemberDropdown bookindex={index} />
               <hr />
             </div>
           </div>
